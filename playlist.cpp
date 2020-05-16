@@ -10,6 +10,7 @@ PlaylistNode::PlaylistNode(string initSongName, string initArtistName, int initL
 	this->artistName = initArtistName;
 	this->songLength = initLength;
 	this->nextNodePtr = initLoc;
+	song_placement = 0;
 
 	return;
 };
@@ -217,5 +218,24 @@ void PlaylistNode::InsertAfter(PlaylistNode *nodeLoc)
 	this->nextNodePtr = nodeLoc;
 	nodeLoc->nextNodePtr = tmpVal;
 
+	return;
+}
+
+//FUNCTION TO PLAY A FIXED AMOUNT OF SONGS
+void PlaylistNode::play(int songs)
+{
+	for (int i = 0; i < songs; i++)
+	{
+		if (song_placement > songLength)
+		{
+			song_placement = 0;
+		}
+		cout << PlaylistNode[song_placement] << endl;
+		song_placement++;
+		if (song_placement == (songLength))
+		{
+			song_placement = 0;
+		}
+	}
 	return;
 }
