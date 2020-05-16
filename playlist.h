@@ -24,5 +24,6 @@ private:
 	string artistName;
 	int songLength;
 	PlaylistNode *nextNodePtr;
+	int song_placement;
 };
 #endif
