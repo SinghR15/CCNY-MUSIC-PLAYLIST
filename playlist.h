@@ -18,6 +18,7 @@ public:
 	void PrintPlaylistNode();
 	void PrintPlaylist(PlaylistNode *headObj);
 	void InsertAfter(PlaylistNode *nodeLoc);
+	void play(int songs);
 
 private:
 	string songName;
